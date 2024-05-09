@@ -1,0 +1,17 @@
+﻿@model FinalLab1.Models.Products
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+
+    <form method="post" asp-action="Delete" >
+        <input type="text" asp-for="ID" />
+        <tr>&npsp</tr>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+

@@ -1,0 +1,32 @@
+﻿
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<Table border="3">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var products in ViewBag.product)
+    {
+        <tr>
+            <td>@products.ID</td>
+            <td>@products.Name</td>
+            <td>@products.Price</td>
+            <td>@products.Quantity</td>
+            <td>@products.Status</td>
+
+        </tr>
+    <td>
+            <a asp-action="Add">Add</a>
+            <a asp-action="Edit" asp-route-itemid="@products.ID">Edit</a>
+                <a asp-action="Delete" asp-route-itemid="@products.ID">Delete</a>
+    </td>
+    }
+</Table>
