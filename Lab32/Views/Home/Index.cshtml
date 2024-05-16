@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Lab32.Models.ProductViewModel>
+
+    <h2>Indeexx</h2>
+
+    @foreach (var product in Model)
+    {
+        <p>@product.Id @product.Name</p>
+    }

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Lab3.Models.StudentInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" >Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                DateOfBirth
+            </th>
+            <th>
+                BackTime
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+                WebsiteUrl
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                ConfirmPassword
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Student)
+        {
+        <tr>
+            
+             <td>
+                        @item.Name
+            </td>
+            <td>
+                        @item.Gender
+
+            </td>
+            <td>
+                        @item.DateOfBirth
+
+            </td>
+            <td>
+                        @item.BackTime
+
+            </td>
+            <td>
+                        @item.PhoneNumber
+
+            </td>
+            <td>
+                        @item.Email
+
+            </td>
+            <td>
+                        @item.WebsiteUrl
+
+            </td>
+            <td>
+                        @item.Password
+
+            </td>
+            <td>
+                        @item.ConfirmPassword
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
